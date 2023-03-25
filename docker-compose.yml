@@ -1,0 +1,43 @@
+version: '3'
+services:
+  goservice1:
+    container_name: "goservice1"
+    build: .  
+    volumes:
+      - ./main.go:/app/main.go
+    restart: always
+    command: go run main.go
+    networks:
+      backend:
+        ipv4_address: 192.12.0.3
+  
+  goservice2:
+    container_name: "goservice2"
+    build: .  
+    volumes:
+      - ./main.go:/app/main.go
+    restart: always
+    command: go run main.go
+    networks:
+      backend:
+        ipv4_address: 192.12.0.4
+  
+  loadbalancer:
+    container_name: "nginx"
+    build: ./load-balancer
+    restart: always
+    depends_on:
+      - goservice1
+      - goservice2
+    ports:
+        - '8081:80'
+    networks:
+      backend:
+        ipv4_address: 192.12.0.2
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.12.0.0/24

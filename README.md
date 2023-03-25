@@ -1,7 +1,6 @@
-# zero-downtime-deploy-example
+# This repository provides an example of a zero-downtime deployment using NGINX.
 
-
-## call go api and websocket
+## How to use
 
 Use curl and wscat to call a Go API and Websocket, respectively.
 <pre><code>
@@ -16,7 +15,7 @@ wscat -c 'ws://127.0.0.1:8081/websocket'
 
 Use wscat to call the Websocket.
 
-## how to drain connect
+## Follow the steps below to perform a zero-downtime deployment.
 
 ### STEP1. Start the Docker services:
 

@@ -55,6 +55,9 @@ If the connection is not interrupted and the message is successfully delivered, 
 ### step6. Use the docker-compose command to stop the goservice1 container
 Stop goservice1:
 
+<pre><code>
 docker-compose stop goservice1
+</code></pre>
+
 
 After completing the above steps, zero-downtime deployment is complete.

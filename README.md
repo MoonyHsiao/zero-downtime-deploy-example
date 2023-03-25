@@ -15,7 +15,7 @@ wscat -c 'ws://127.0.0.1:8081/websocket'
 
 
 When connecting to the websocket service using wscat -c 'ws://127.0.0.1:8081/websocket', since there are two services running in the background, the connection will be randomly established with one of them. To verify that the connections are going to different servers, you can input any string (e.g. "hello") into the terminal. The server will respond with a message similar to the following example: @twilight-resonance server @2023-03-25 08:42:29 receive your message: hello. By checking whether the message is received from different servers, you can confirm that the connections are going to different servers.
-![image description](./images/example_image.png)
+![image description](example_image.png)
 
 
 ## Follow the steps below to perform a zero-downtime deployment.
